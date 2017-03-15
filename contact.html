@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Saint-Paul</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/function.js"></script>
+    <!-- 
+            You need to include this script tag on any page that has a Google Map.
+
+            The following script tag will work when opening this example locally on your computer.
+            But if you use this on a localhost server or a live website you will need to include an API key. 
+            Sign up for one here (it's free for small usage): 
+                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+            After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+        -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                height: 400px;
+            }
+        </style>
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 13,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(45.4150128, -73.4913201), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#f8a11e"},{"visibility":"on"}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(45.4150128, -73.4913201),
+                    map: map,
+                    title: 'Café Saint-Paul'
+                });
+            }
+        </script>
+</head>
+<body>
+   <header>
+    <button class="toggle-nav"> <span>></span> </button>
+       <nav>
+        <ul class="nav">
+            <li class="loud"><a href="index.html">Accueil</a></li>
+            <li class="loud"><a href="about.html">À propos</a></li>
+            <li class="loud"><a href="events.html">Événements</a></li>
+            <li class="loud"><a href="reserv.html">Réservation</a></li>
+            <li class="loud"><a href="contact.html">Contacts</a></li>
+        </ul>
+       </nav>
+    </header>
+      
+            
+    <section class="h-bg">
+        <div class="h-bg"></div>
+        <h1 class="big-word">Contacts</h1>
+        <h3 class="sub-word">
+            <a href="index.html">Accueil</a> / Contacts
+        </h3>
+        <div class="h-biere"></div>  .
+    </section>
+    <div style="height: 80px;"></div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <h1 class="h1-word loud">Nous joindre</h1>
+                    <img src="assets/img/misc.png" alt="img" style="height: 3px; width: 60px;">
+                    <br><br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, totam qui! Voluptate expedita
+                    </p>
+                    <br>
+                    <h4 class="h2-word loud">trouvez-nous</h4>
+                    <p>
+                        345, Boul. Taschereau (Saint-Paul) <br>
+                        La Prairie, QC, J5R 1T4 <br>
+                        Call us <span class="hoveror">(450) 907-4667</span> <br>
+                    </p>
+                </div>
+                <div class="eight columns">
+                <form action="">
+                    <label for="Name">Nom</label>
+                    <input class="u-full-width" type="text" id="Name">
+                    <label for="EmailInput">E-mail</label>
+                    <input class="u-full-width" type="email" id="EmailInput">
+                        <label for="Message">Message</label>
+                        <textarea rows="40" style="resize:none" class="u-full-width" id="Message" ></textarea>
+                        <br><br>
+                        <div class="row">
+                            <div class="six columns">
+                                <input class="button-primary" type="submit" value="Envoyer">
+                            </div>
+                            <div class="six columns">
+                                <label class="example-send-yourself-copy">
+                                     <input type="checkbox">
+                                     <span class="label-body">Envoyez-vous une copie</span>
+                                 </label>
+                            </div>
+                        </div>
+                         
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <section id="map" style="width: 100%"></section>
+
+    </section>
+                        
+
+    
+    <section>
+        <div class="footer-bg" style="">
+            <div style="height: 50px;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="four columns">
+                        <h1 class="muted-word" style="color: white; font-weight: 500">Addresse</h1>
+                        <p style="color: white">
+                            <br>
+                            345, Boul. Taschereau (Saint-Paul) <br>
+                            La Prairie, QC, J5R 1T4 <br>
+                        </p>
+                        <br>
+                        <a href="#">
+                            <img class="u-max-full-width" src="assets/img/resto-mon.png" alt="resto">
+                        </a>
+
+
+                        <br><br><br>
+
+                    </div>
+                    <div class="four columns">
+                        <h1 class="muted-word" style="color: white; font-weight: 500">Contact</h1>
+                        <a href="#" class="a-title2" style="font-size: 1.7em">(450) 907-4667</a>
+
+                        <div style="height: 9px"></div>
+
+                        <div class="fb-hover" style="height: 50px; width: 50px; left: 50%">
+                            <a href="#">
+                                <img src="assets/img/white-facebook.png" alt="fb" style="height: 50px; position: absolute">
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="four columns">
+                        <h1 class="muted-word" style="color: white; font-weight: 500">Horaires Bar / Cuisine</h1>
+                        <br>
+                        <p style="color: white">
+                            Dim: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Lun: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Mar: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Mer: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Jeu: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Ven: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                            Sam: 12 PM - 12 AM / 12 PM - 12 AM <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

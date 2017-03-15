@@ -1,0 +1,9 @@
+@media(max-width: 575px) {
+    .h-logo {
+        background-size: 100%;
+    }
+    
+    .h-biere {
+        margin-left: -550px;
+    }
+}
